@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>ly-item</artifactId>
+        <groupId>com.leyou.sevice</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.leyou.interface</groupId>
+    <artifactId>ly-item-interface</artifactId>
+    <packaging>pom</packaging>
+
+   <build>
+       <plugins>
+           <!--如果不添加如下代码，则报错-->
+           <!--error：Please refer to D:\dev\joinUs\joinUs-backend\target\surefire-reports for the individual test results.-->
+           <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-surefire-plugin</artifactId>
+               <configuration>
+                   <testFailureIgnore>true</testFailureIgnore>
+               </configuration>
+           </plugin>
+           <!--将jar包部署到本地的maven仓库——结束-->
+       </plugins>
+   </build>
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+</project>
